@@ -1,0 +1,154 @@
+footer{
+    background-color: #FFFFFF;
+    
+}
+.footer-items{
+    display: flex;
+    justify-content: space-around;
+    max-height: 300px;
+}
+
+.footer-items-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 200px;
+    height: 151px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-items-1-text-1{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+color: #808080;
+}
+
+.footer-items-1-text-2{
+    font-family: 'Circe Rounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #292929;
+}
+
+.footer-items-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 178px;
+    height: 141px;
+    padding-bottom: 60px;
+    padding-top: 75px;  
+}
+.footer-items-2-text{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+color: #292929;
+
+}
+
+.footer-ul-items a{
+    font-family: 'Circe Rounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-ul-items a:hover{
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color:#FD9339;
+}
+
+.footer-ul-items div{
+    padding-top:10px;
+}
+
+.footer-items-3{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-items-3-text{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+color: #292929;
+
+}
+
+.footer-items-4{
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+.footer-pay-icon{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 170px;
+    padding-top: 16px;
+}
+
+.footer-pay-icon img{
+    padding-right: 10px;
+    padding-bottom:10px ;
+}
+
+.footer-items-5{
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+.footer-items-text{
+    padding-top: 10px;
+}
+
+.footer-items-phone{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+text-align: right;
+color: #4E2D2D;
+}
+.footer-text-5{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 10px;
+}
+
+.footer-photo-5{
+    max-width: 20px;
+    padding-right: 5px;
+    
+}
+.footer-items-5-text{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+color: #292929;
+
+}
+
+.footer-icon-logo-soc{
+    padding-top: 33px;
+    display: flex;
+    justify-content: space-around;
+}
