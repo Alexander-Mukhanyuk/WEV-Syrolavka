@@ -1,0 +1,118 @@
+.articles-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1vw;
+
+    margin-top: 50px;
+}
+
+.articles-items-1{
+    grid-row-start: 1;
+    grid-row-end:3 ;
+    background-image: url(../img/body/articles/bg-articles.png);
+    max-width: 380px;
+    height: 560px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.articles-items-1-text-1{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 38px;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+color: #4E2D2D;
+margin-left: 60px;
+margin-top: 45px;
+}
+
+.articles-items-1-text-2{
+    margin-left: 60px; 
+    max-width: 320px;
+height: 60px;
+left: 280px;
+font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #666666;
+}
+
+.article-button{
+    max-width: 185px;
+    height: 56px;
+    left: 330px;
+    top: 3696px;;
+    border: none;
+    background: #FD9339;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+    margin-bottom: 25px;
+    padding: 16px 27px 16px 27px;
+}
+
+
+
+.articles-items-2,
+.articles-items-3,
+.articles-items-4,
+.articles-items-5{
+    max-width: 380px;
+    height: 270px;
+    background: #FFFFFF;
+    border: 1px solid #E7E7E7;
+    border-radius: 5px;
+}
+.article-text-caption{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+color: #4E2D2D;
+flex: none;
+order: 0;
+flex-grow: 0;
+margin-top: 10px;
+margin-left: 15px;
+}
+
+.article-text{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #000000;
+opacity: 0.6;
+flex: none;
+order: 1;
+flex-grow: 0;
+margin-left: 15px;
+margin-bottom: 10px;
+}
+
+.article-items-link a{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+text-decoration-line: underline;
+margin-left: 15px;
+color: #FD9339;
+text-decoration: none;
+}
+
