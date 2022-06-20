@@ -1,0 +1,95 @@
+.body-recomendation-items .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.recomendation-text{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 800;
+font-size: 28px;
+line-height: 40px;
+letter-spacing: 0.01em;
+color: #4E2D2D;
+}
+
+.recomendation-items{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.recomendation-items-1{
+    background: url(../img/body/recomendation/bg-items-1.svg);
+    width: 48.9%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.recomendation-items-2{
+    background: url(../img/body/recomendation/bg-items-2.svg);
+    width: 48.9%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.recomendation-items-1-text-1{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 32px;
+text-transform: uppercase;
+color: #4E2D2D;
+padding-left: 40px;
+/*padding-right: 273px;*/
+}
+.recomendation-items-1-text-2{
+    font-family: 'Circe Rounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #000000;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.recomendation-items-2-text-1{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 32px;
+text-transform: uppercase;
+color: #FFFFFF;
+margin-left: 40px;
+}
+.recomendation-items-2-text-2{
+    font-family: 'Circe Rounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FFFFFF;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+
+.recomendation-button{
+    max-width: 132px;
+height: 44px;
+right: 14px;
+top: calc(50% - 38px/2 + 115px);
+border: none;
+background: #FD9339;
+border-radius: 5px;
+color: #FFFFFF;
+margin-left: 40px;
+padding: 10px 30px 10px 30px;
+}
