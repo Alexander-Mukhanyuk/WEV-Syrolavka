@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    <link rel="stylesheet" href="css/registrashion-style.css">
+    <link rel="stylesheet" href="css/footer-style.css">
+    <title>Сыроварение-Регистрация</title>
+  </head>
+  <body>
+  
+          
+      <header class="header">
+          <div class="container">
+          <div class="header-items">
+               <div class="header-items-1">
+                   <div class="header-items-photo">
+                       <img class="header-photo-1" src="img/header/jps.svg" alt="Город">
+                       <p class="header-text">Ваш город:</p>
+                       <select class="header-items-town"> <!--раскрывающийся список-->
+                        <option  label = "Лида">
+                        <option  label = "Орша">                             <!--первый раздел шапки-->
+                        <option  label = "Москва">
+                        <option  label = "Минск">
+                        <option  label = "Гродно">
+                    </select>
+                    </div>
+                    <div class="header-items-photo">
+                        <img class="header-photo-2" src="img/header/time.svg" alt="Время работы">
+                        <p class="header-text">Пн-Пт 9:00 - 19:00</p>
+                        </div>
+                </div>
+
+                <div class="header-items-2">
+                    
+                    <nav class="header-nav">
+                        <ul class="ul">
+                            <li>О компании</li>
+                            <li>Преимущества</li>
+                            <li>Аукционные товары</li>
+                            <li><img src="img/header/acaynt.svg" alt="Личный кабинет"></li>
+                             <li>Войти в аккаунт</li>
+                            </ul>
+                    </nav>
+                    </div>
+            
+                    
+            </div>
+        
+        
+
+            <div class="header-items-logo">
+                <div class="container">
+                <div class="header-items-3">
+                    <div class="header-logo">
+                       <a href="#"><img class="logo-photo" src="img/header/Logo.svg" alt="Логотип"></a> 
+                    </div>
+                    <div class="header-dostavka items-3">
+                    <img class="header-items-3-photo" src="img/header/dostavka.svg" alt="Доставка">
+                    <p class="header-logo-text">Бесплатная доставка</p>
+                    </div>
+                    <div class="header-cart items-3">
+                        <img class="header-items-3-photo" src="img/header/cart.svg" alt="Оплата картой">
+                        <p class="header-logo-text text-2">Скидка при оплате на сайте</p>
+                        </div>
+                    <div class="header-protection items-3">
+                    <img class="header-items-3-photo" src="img/header/user-protection-shield-square1.svg" alt="Доставка">
+                    <p class="header-logo-text">Защита покупателей</p>
+                     </div>
+                                                                                                                          <!--Второй раздер шапки--> 
+                     <div class="contacts">
+                       <div class="header-cotiolity items-3">
+                        <img class="header-photo-cotiolity" src="img/header/Telegram.svg" alt="Телеграм" >
+                        <img class="header-photo-cotiolity" src="img/header/WhatsUp.svg" alt="WhatsUp">
+                        <img class="header-photo-cotiolity" src="img/header/Messenger.svg" alt="Messenger">
+                      </div>
+
+                      <div class="header-cotiolity-phone">
+                        <div class="phone-number-text">+8 916 460-19-60</div>
+                        <button class="phone" type="button"><img class="phone-text" src="img/header/phones-031.svg" alt="phone"><span class="phone-text">Заказать звонок</span></button>
+                        </div>
+                     </div>
+
+                     <div class="header-basket">
+                        <div class="header-basket-items">
+                         <div class="header-basket-text-1">
+                            Ваша корзина
+                           <p class="header-basket-price"> 0 руб.</p>
+                         </div>
+                        </div>
+                        <div class="header-basket-items">
+                            <div class="header-basket-photo">
+                                <img src="img/header/shopping-cart1.svg" alt="shoping-cart">
+                            </div>
+                        </div>
+                   
+                     </div>
+                </div>
+             </div>
+            </div>
+             <div class="header-navigation">
+                <div class="container">
+                <div class="header-items-4">
+                    <div class="header-navigation-select">
+                       <ul class="ul-2">
+                           <li>Рецепты</li>
+                           <li>Доставкаи оплата</li>
+                           <li>Калькулятор Сыродела</li>
+                           <li>Отзывы</li>
+                            <li>Вопросы и ответы </li>
+                            <li>Кантакты</li>
+                           </ul>                        <!--Третий раздел шапки-->
+                     </div>
+                    <div class="header-navigation-search">
+                        <img class="search-photo" src="img/header/search-loupe2.svg" alt="Лупа">
+                        <div class="search">
+                        <input type="search" id="search" placeholder="Введите название товара или артикул">
+                    </div>
+                
+                    </div>
+                    </div>
+                </div>
+            </div>  
+          </div> 
+      </header>
+
+    <main class="body-registrashion">
+        <div class="container">
+            <div class="registrashion-items">
+                <div class="registrashion-items-1">
+                    <div class="registrashion-items-1-text-1">
+                        Постоянный покупатель
+                    </div>
+                    <form name="loginform" onSubmit="return validateForm();" action="C:/Users/Alllex/OneDrive/Desktop/Практика по ПССИП/Syrolavka/registrashion.html" method="post">
+                    <label for="login-field" id="login-field-text">Ваш логин (email):</label><br>
+                     <input type="text" name="login" id="login-field" placeholder="login"><br>
+                    <label for="password-field" id="password-field-text">Пароль:</label><br>
+                    <input type="password" name="password" id="password-field" placeholder="password"><br>
+                    <input type="submit" value="Войти" class="submit" />
+                    </form>
+                    <script defer src="js/validation.js"></script>
+                    
+                    <div class="registrashion-or">
+                        <img src="img/registrashion/Line.svg" alt="Line" class="line1">
+                        <div class="registrashion-or-text">или</div>
+                        <img src="img/registrashion/Line.svg" alt="Line" class="line2">
+                    </div>
+                    <div class="soc-seti">
+                        <img src="img/registrashion/Facebook.svg" alt="Facebook" class="Facebook">
+                        <img src="img/registrashion/Google.svg" alt="Google" class="Google">
+                        <img src="img/registrashion/VK.svg" alt="VK" class="VK">
+                        <img src="img/registrashion/Twitter.svg" alt="Twitter" class="Twitter">
+                        <img src="img/registrashion/MailRu.svg" alt="MailRu" class="MailRu">
+                        <img src="img/registrashion/Yandex.svg" alt="Yandex" class="Yandex">
+                    </div>
+                    <div class="not-know-password"><a href="#">Забыли пароль?</a></div>
+                </div>
+                <div class="registrashion-items-2">
+                    <div class="registrashion-items-2-text-1">
+                        Создайте экран
+                    </div>
+                    <div class="registrashion-items-2-text-2">
+                        Делайте покупки быстро и удобно, отслеживайте статус заказа и <br>получайте скидки.
+                    </div>
+                     <input type="button" value="Зарегистрироваться" class="registration-button">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-items">
+             <div class="footer-items-1 ">
+                <a href="#"><img class="footer-logo" src="img/footer/logo.svg" alt="footer-logo"></a>
+                <div class="footer-items-1-text-1">
+                    Все материалы данного сайта являются объектами авторского права.
+                </div>
+                <div class="footer-items-1-text-2">
+                    Разработка сайта: ЛяЧиз
+                </div>
+             </div>
+             <div class="footer-items-2">
+                <div class="footer-items-2-text">Компания</div>
+                <div class="footer-ul-items">
+                    <a href="#"><div>О компании</div></a>
+                    <a href="#"><div>Акции и скидки</div></a>
+                    <a href="#"><div>Доставка и оплата</div></a>
+                    <a href="#"><div>Отзывы</div></a>
+                    <a href="#"><div>Гарантия и возврат</div></a>
+                </div>
+             </div>
+             <div class="footer-items-3">
+                <div class="footer-items-3-text">Поддержка</div>
+                <div class="footer-ul-items">
+                    <a href="#"><div>Вопрос ответ</div></a>
+                    <a href="#"><div>Бонусная программа</div></a>
+                    <a href="#"><div>Политика конфиденциальности</div></a>
+                    <a href="#"><div>Персональные данных</div></a>
+                </div>
+              </div>
+                <div class="footer-items-4">
+                    <div class="footer-items-3-text">Способы оплаты</div>
+                 <div class="footer-pay-icon">
+                    <a href="#"><img src="img/footer/Ruble.svg" alt="ruble"></a>
+                    <a href="#"><img src="img/footer/Vector.svg" alt="vector"></a>
+                    <a href="#"><img src="img/footer/Sberbank.svg" alt="sberbank"></a>
+                    <a href="#"><img src="img/footer/Yandex.svg" alt="yandex"></a>
+                    <a href="#"><img src="img/footer/Mastercard.svg" alt="mastercard"></a>
+                    <a href="#"><img src="img/footer/Visa.svg" alt="visa"></a>
+                  </div>
+                  </div>
+                  <div class="footer-items-5">
+                    <div class="footer-items-phone">+7 495 120 00 00</div>
+                    <div class="footer-items-text">
+                        <div class="footer-text-5">
+                            <div class="footer-items-5-text">Пн-Пт 9:00 - 19:00</div>
+                            <img src="img/footer/alarm-clock-time-timer.21.svg" class="footer-photo-5" alt="time">
+                        </div>
+                        <div class="footer-text-5">
+                            <div class="footer-items-5-text">г. Москва,  улица Свободы 1/7</div>    
+                            <img src="img/footer/interface-essential-1951.svg"  class="footer-photo-5" alt="gps">
+                        </div>
+                    </div>
+                    <div class="footer-icon-logo-soc">
+                        <a href="#"><img src="img/footer/logo-instagram1.svg" alt="instagram"></a>
+                        <a href="#"><img src="img/footer/logo-vk1.svg" alt="vk"></a>
+                        <a href="#"><img src="img/footer/logo-twitter1.svg" alt="twitter"></a>
+                        <a href="#"><img src="img/footer/logo-facebook1.svg" alt="facebook"></a>
+                        <a href="#"><img src="img/footer/logo-youtube1.svg" alt="youtube">   </a>                     
+                    </div>
+               </div>
+                     </div>
+          </div>
+      </footer>
+
+  </body>
+</html>
