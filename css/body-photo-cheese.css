@@ -1,0 +1,36 @@
+.body-photo-sheese{
+    background: url(../img/body/section-sheese/bg.svg);
+    max-width: 1680px;
+    height: 820px;
+    margin-top: 100px;
+    filter: grayscale(0.5);
+}
+
+.body-photo-sheese-text{
+    display: flex;
+    flex-direction: column;
+    max-width: 398px;
+    height: 128px;
+    padding-top: 100px;
+
+}
+
+.body-photo-sheese-text1{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 800;
+font-size: 46px;
+line-height: 64px;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+color: #4E2D2D;
+}
+
+.body-photo-sheese-text2{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #292929;
+}
