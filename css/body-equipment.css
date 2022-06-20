@@ -1,0 +1,54 @@
+.body-equipment-items .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.equipment-items{
+    background: url(../img/body/equipment/equipment-bg.svg);
+    height: 440px;
+    max-width: 1180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.equipment-items-text-1{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 32px;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+color: #4E2D2D;
+margin-left: 80px;
+}
+
+.equipment-items-text-2{
+    font-family: 'Circe Rounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666666;
+    margin-left: 80px
+}
+.equipment-button{
+    max-width: 185px;
+    height: 56px;
+    left: 330px;
+    top: 3696px;;
+    border: none;
+    background: #FD9339;
+    border-radius: 5px;
+    color: #FFFFFF;
+    margin-left: 80px;
+    margin-bottom: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px 16px 40px;
+}
