@@ -1,0 +1,20 @@
+.viewed-items{
+    margin-top: 60px;
+    margin-bottom: 120px;
+}
+
+.viewed-items-text{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 40px;
+letter-spacing: 0.01em;
+color: #4E2D2D;
+}
+
+.viewed-items-card{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
