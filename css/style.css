@@ -1,0 +1,14 @@
+body{
+
+    background-color: #FFFBED;
+}
+
+.container{
+    max-width: 1186px;
+    margin: 0 auto;
+}
+
+button{
+    cursor: pointer;
+}
+
