@@ -1,0 +1,132 @@
+.body-items-2{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.catalog{
+    flex-basis: 75%;
+}
+
+.catalog-ingridients{
+    display: flex;
+    flex-wrap: wrap;
+}
+.catalog .shop-cat-items-1{
+    margin: 6px; 
+    
+}
+.catalog-section{
+    display: flex;
+}
+
+.catalog-popular{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 24px;
+letter-spacing: 0.01em;
+color: #FD9339;
+border-bottom: 1px solid #FD9339;
+margin-right: 30px;
+}
+
+.catalog-stock{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 24px;
+letter-spacing: 0.01em;
+color: #808080;
+
+opacity: 0.8;
+}
+
+.catalog-header{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 24px;
+color: #4E2D2D;
+margin-top: 40px;
+margin-bottom: 15px;
+}
+
+  .shop-cat-items-1{
+    display: flex;
+    flex-direction: column;
+    max-width: 208px;
+    height: 300px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid gray;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+}
+.items-1-photo{
+    max-width: 180px;
+    height: 140px;
+    
+    border-radius: 4px; 
+    margin-top: 10px;  
+}
+.items-1-ellipse{
+    display: flex;
+    align-items: center;
+}
+.items-1-text{
+    max-width: 180px;
+height: 40px;
+left: 14px;
+top: calc(50% - 40px/2 + 48px);
+
+font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #292929;
+}
+hr{
+    border: 1px solid #E6E6E6;
+    top: calc(50% - 0px/2 + 82px);
+}
+.items-1-button-price{
+    display: flex;
+    
+}
+.items-1-prise{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+letter-spacing: 0.01em;
+color: #292929;
+
+}
+.exway-prise{
+    font-family: 'Circe Rounded';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+letter-spacing: 0.01em;
+text-decoration-line: line-through;
+color: #FF4F4F;
+}
+.items-1-button{
+max-width: 90px;
+height: 38px;
+right: 14px;
+top: calc(50% - 38px/2 + 115px);
+border: none;
+background: #FD9339;
+border-radius: 5px;
+margin-left: 5px;
+color: #FFFFFF;
+}
