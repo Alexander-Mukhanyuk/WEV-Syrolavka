@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Сайт о сыроварение"> 
+    <meta name="Keywords" content="Сыр, сыроварение, магазин, сайт, HTML, CSS, JS"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer-style.css">
+    <link rel="stylesheet" href="css/body-viewed.css">
+    <link rel="stylesheet" href="css/body-articles.css">
+    <link rel="stylesheet" href="css/body-equipment.css">
+    <link rel="stylesheet" href="css/body-recomendation.css">
+    <link rel="stylesheet" href="css/body-photo-cheese.css">
+    <link rel="stylesheet" href="css/body-catalog.css">
+    <link rel="stylesheet" href="css/body-slider.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/arrow-up-down.css">
+    <link rel="stylesheet" href="css/chief-slider.min.css">
+    <link rel="icon" href="img/icon/icon.svg" type="image/x-icon">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <SCRIPT type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></SCRIPT>
+  <SCRIPT type="text/javascript" src="js/photo-hint.js"></SCRIPT>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = new ChiefSlider('.slider', {
+        loop: false
+      });
+    });
+  </script>
+        <style type="text/css">
+.popup1 {
+position:absolute;
+height:100%;
+width:100%;
+top:0;
+left:0;
+display:none;
+text-align:center;
+}
+
+.popup_bg1 {
+background:rgba(0,0,0,0.4);
+position:absolute;
+z-index:1;
+height:100%;
+width:100%;
+}
+
+.popup_img1 {
+position:absolute;
+margin:0 auto;
+z-index:2;
+max-height:100%;
+max-width:600px;
+margin:15% 0 0 0;
+}
+/* Всплывающее окно 
+* при загрузке сайта            
+*/
+/* базовый контейнер, фон затемнения*/
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 999;
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+    overflow: auto;
+}
+/* модальный блок */
+.popup {
+    top: 25%;
+    left: 0;
+    right: 0;       
+    font-size: 14px;
+    margin: auto;
+    width: 85%;
+    min-width: 320px;
+    max-width: 600px;
+    position: absolute;
+    padding: 15px 20px;
+    border: 1px solid #383838;
+    background: #fefefe;
+    z-index: 1000;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    font: 14px/18px 'Tahoma', Arial, sans-serif;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -ms-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+}
+/* заголовки в модальном блоке */
+.popup h2, .popup h3 {
+    margin: 0 0 1rem 0;
+    font-weight: 300;
+    line-height: 1.3;
+    color: #FD9339;
+    text-shadow: 1px 2px 4px #ddd;
+}
+/* кнопка закрытия */
+.close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    border: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #FD9339;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    outline: none;
+
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* кнопка закрытия при наведении */
+.close:hover {
+    background-color: rgba(252, 20, 0, 0.8);
+}
+/* изображения в модальном окне */
+.popup img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+/* миниатюры изображений */
+.pl-left,
+.pl-right {
+    width: 25%;
+    height: auto;
+}
+/* миниатюры справа */
+.pl-right {
+    float: right;
+    margin: 5px 0 5px 15px;
+}
+/* миниатюры слева */
+.pl-left {
+    float: left;
+    margin: 5px 18px 5px 0;
+}
+/* анимация при появлении блоков с содержанием */
+@-moz-keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1 }
+}
+@-webkit-keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1 } 
+}
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1 }
+}
+
+</style>
+    <title>Сыроварение</title>
+  </head>
+  <body>
+    <div id="overlay">
+        <div class="popup">
+            <h2>Покупайте сыр у нас!</h2>
+            <p>
+                Особый вкус каждого блюда!Черпайте вдохновение в самой природе.Превратите еду в источник вдохновения.
+             </p>
+             <div class="pl-left">
+                   <img src="img/modal-windows/img1.jpg">
+             </div>
+             <p>Несмотря на то, что сыры часто ругают за высокое содержание жиров, новые исследования свидетельствуют, что они могут не иметь того негативного воздействия на наше здоровье, которое мы предполагаем</p>
+             <div class="pl-етственно.right">
+                   <img src="img/modal-windows/img2.jpg">
+             </div>              
+    <p>Ученые из Университета Турку в Финляндии выяснили, что пробиотический сыр обладает способностью предотвращать возрастное ухудшение состояния иммунной системы.</p>
+           <p>
+            Включение сыра в диету поможет снизить кровяное давление, а также приведет к увеличению сжигания абдоминального жира.
+           </p>
+            <button class="close" title="Закрыть" onclick="document.getElementById('overlay').style.display='none';"></button>
+        </div>
+    </div>
+<script type="text/javascript">
+var delay_popup = 5000;	setTimeout("document.getElementById('overlay').style.display='block'", delay_popup);
+</script>
+
+    <a class="up_down_btn" title="Наверх">&uarr;</a>
+    <script defer src="js/arrow-up-down.js"></script>
+          
+      <header class="header">
+          <div class="container">
+          <div class="header-items">
+               <div class="header-items-1">
+                   <div class="header-items-photo">
+                       <img class="header-photo-1" src="img/header/jps.svg" alt="Город">
+                       <p class="header-text">Ваш город:</p>
+                       <select class="header-items-town"> <!--раскрывающийся список-->
+                        <option  label = "Лида">
+                        <option  label = "Орша">                             <!--первый раздел шапки-->
+                        <option  label = "Москва">
+                        <option  label = "Минск">
+                        <option  label = "Гродно">
+                    </select>
+                    </div>
+                    <div class="header-items-photo">
+                        <img class="header-photo-2" src="img/header/time.svg" alt="Время работы">
+                        <p class="header-text">Пн-Пт 9:00 - 19:00</p>
+                        </div>
+                </div>
+
+                <div class="header-items-2">
+                    
+                    <nav class="header-nav">
+                        <ul class="ul">
+                            <li>О компании</li>
+                            <li>Преимущества</li>
+                            <li>Аукционные товары</li>
+                            <li><img src="img/header/acaynt.svg" alt="Личный кабинет"></li>
+                             <li>Войти в аккаунт</li>
+                            </ul>
+                    </nav>
+                    </div>
+            
+                    
+            </div>
+        
+        
+
+            <div class="header-items-logo">
+                <div class="container">
+                <div class="header-items-3" >
+                    <div class="header-logo">
+                       <a href="#"><img class="logo-photo" src="img/header/Logo.svg" alt="Логотип"></a> 
+                    </div>
+                    <div class="header-dostavka items-3">
+                    <img class="header-items-3-photo" src="img/header/dostavka.svg" alt="Доставка">
+                    <p class="header-logo-text">Бесплатная доставка</p>
+                    </div>
+                    <div class="header-cart items-3">
+                        <img class="header-items-3-photo" src="img/header/cart.svg" alt="Оплата картой">
+                        <p class="header-logo-text text-2">Скидка при оплате на сайте</p>
+                        </div>
+                    <div class="header-protection items-3">
+                    <img class="header-items-3-photo" src="img/header/user-protection-shield-square1.svg" alt="Доставка">
+                    <p class="header-logo-text">Защита покупателей</p>
+                     </div>
+                                                                                                                          <!--Второй раздер шапки--> 
+                     <div class="contacts">
+                       <div class="header-cotiolity items-3">
+                        <img class="header-photo-cotiolity" src="img/header/Telegram.svg" alt="Телеграм" >
+                        <img class="header-photo-cotiolity" src="img/header/WhatsUp.svg" alt="WhatsUp">
+                        <img class="header-photo-cotiolity" src="img/header/Messenger.svg" alt="Messenger">
+                      </div>
+
+                      <div class="header-cotiolity-phone">
+                        <div class="phone-number-text">+8 916 460-19-60</div>
+                        <button class="phone" type="button" onclick="document.location='index.html'"><img class="phone-text" src="img/header/phones-031.svg" alt="phone"><span class="phone-text">Заказать звонок</span></button>
+                        
+                        </div>
+                     </div>
+
+                     <div class="header-basket">
+                        <div class="header-basket-items">
+                         <div class="header-basket-text-1">
+                            Ваша корзина
+                           <p class="header-basket-price"> 0 руб.</p>
+                         </div>
+                        </div>
+                        <div class="header-basket-items">
+                            <div class="header-basket-photo">
+                                <img src="img/header/shopping-cart1.svg" alt="shoping-cart" >
+                            </div>
+                        </div>
+                   
+                     </div>
+                </div>
+             </div>
+            </div>
+             <div class="header-navigation">
+                <div class="container">
+                <div class="header-items-4">
+                    <div class="header-navigation-select">
+                       <ul class="ul-2">
+                           <li>
+                            <div class="dropdown">
+                                <button class="dropbtn" onclick="myFunction()"> Рецепты &#709;
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content" id="myDropdown">
+                                  <a href="#">Рецепт 1</a>
+                                  <a href="#">Рецепт 2</a>
+                                  <a href="#">Рецепт 3</a>
+                                </div>
+                                </div> 
+                                <script defer src="js/drop-dowm-menu.js"></script>
+                           </li>
+                           <li>Доставкаи оплата</li>
+                           <li>Калькулятор Сыродела</li>
+                           <li>Отзывы</li>
+                            <li>Вопросы и ответы </li>
+                            <li>Кантакты</li>
+                           </ul>                        <!--Третий раздел шапки-->
+                     </div>
+                    <div class="header-navigation-search">
+                        <img class="search-photo" src="img/header/search-loupe2.svg" alt="Лупа">
+                        <div class="search">
+                        <input type="search" id="search" placeholder="Введите название товара или артикул">
+                    </div>
+                
+                    </div>
+                    </div>
+                </div>
+            </div>  
+          </div> 
+      </header>
+
+      <main class="body">
+        <div class="container">
+            <div class="body-items-1">
+                <div class="slider">
+                    <div class="image"> 
+                        <div class="image-box img1" > 
+                          <div class="content "> 
+                           <div class="slider-items-1">
+
+                                <div class="slider-items-1-text">
+                                    <div class="slider-items-1-text-1">набор для сыроделия</div>
+                                <div class="slider-items-1-text-2">Все что вам нужно для приготовления сыра<br> в домашних условиях</div>
+                                </div>
+                                <div class="slider-items-1-button">
+                                    <button type="button" class="slider-1-button">Смотреть наборы</button>
+                                </div>
+        
+                            </div> 
+                            </div> 
+                          </div> 
+ 
+                          <div class="image-box img2"  > 
+                            <div class="content"> 
+                                <div class="slider-items-2">
+
+                                    <div class="slider-items-2-text">
+                                        <div class="slider-items-2-text-1">Рецепты</div>
+                                    <div class="slider-items-2text-2">сыры с плесенью</div>
+                                    </div>
+                                </div> 
+                           </div> 
+                         
+                            </div> 
+ 
+                            <div class="image-box img3" > 
+                              <div class="content"> 
+                                <div class="slider-items-2">
+
+                                    <div class="slider-items-2-text">
+                                        <div class="slider-items-2-text-1">Акции</div>
+                                    <div class="slider-items-2text-2">закваски для сыра</div>
+                                    </div>
+                                </div>
+                             </div> 
+                              </div> 
+                               
+                        </div>
+                </div>
+            
+            </div>
+            <div class="body-items-2">
+            <div class="side">
+                <div class="side-menu">
+                    <div class="menu">
+                        <div class="menu-header">
+                            <div class="menu-header-items">
+                            <img src="img/body/side-menu/cheese.svg" alt="chesse">
+                            <div class="side-header-text">Ингредиенты</div>
+                            </div>
+                        </div>
+                        <div class="menu-body">
+                            <ul>
+                                <li><a href="#">Закваски для сыра</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                <li><a href="#">Ферменты для сыра</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                <li><a href="#">Хлористый кальций</a></li>
+                                <li><a href="#">Плесень для сыра</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                <li><a href="#">Кисломолочные закваски</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                <li><a href="#">Красители для сыра</a></li>
+                                <li><a href="#">Специи для сыра</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-menu">
+                    <div class="menu">
+                        <div class="menu-header">
+                            <div class="menu-header-items">
+                            <img src="img/body/side-menu/cereal-bowl.svg" alt="cereal-bowl">
+                            <div class="side-header-text">Оборудование</div>
+                            </div>
+                        </div>
+                        <div class="menu-body">
+                            <ul>
+                                <li><a href="#">Формы для сыра</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                <li><a href="#">Латексное покрытие</a></li>
+                                <li><a href="#">Воск для сыра</a></li>
+                                <li><a href="#">Термоусадочные пакеты</a><img src="img/body/side-menu/arrows.svg" alt="arrows"></li>
+                                <li><a href="#">Дренажные коврики</a></li>
+                                <li><a href="#">Дренажные мешки и салфетки для прессования</a></li>
+                                <li><a href="#">Дренажные контейнеры</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script defer src="js/see-side.js"></script>
+
+            <div class="catalog">
+                <div class="catalog-section">
+                    <div class="catalog-popular">Популярные товары</div>
+                    <div class="catalog-stock">Акции</div>
+                </div>
+                <div class="catalog-header">
+                    <div class="catalog-header-ingridients">Ингридиенты</div>
+                </div>
+                <div class="catalog-ingridients">
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo" id="items-1-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="shop-cat-items-1">
+                    <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                    <div class="items-1-ellipse">
+                        <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                        <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                    </div>
+                    <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                    <hr>
+                    <div class="items-1-button-price">
+                        <div class="items-1-prise">
+                            1300₽/1 шт.<br>
+                            <span class="exway-prise">1800₽</span>
+                        </div>
+                        <div class="items-1-button">
+                            <button type="button" class="items-1-button">Добавить</button>
+                        </div>
+        
+                    </div>
+                </div>
+                
+                <div class="catalog-header">
+                    <div class="catalog-header-ingridients">Оборудование</div>
+                </div>
+                <div class="catalog-ingridients">
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="shop-cat-items-1">
+                        <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                        <div class="items-1-ellipse">
+                            <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse">
+                            <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse">
+                        </div>
+                        <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                        <hr>
+                        <div class="items-1-button-price">
+                            <div class="items-1-prise">
+                                1300₽/1 шт.<br>
+                                <span class="exway-prise">1800₽</span>
+                            </div>
+                            <div class="items-1-button">
+                                <button type="button" class="items-1-button">Добавить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+            
+        
+
+        <div class="body-photo-sheese">
+            <div class="container">
+                <div class="body-photo-sheese-text">
+                <div class="body-photo-sheese-text1">
+                    НАШИ ПРЕИМУЩЕСТВА
+                </div>
+                <div class="body-photo-sheese-text2">
+                    Мы лично отвечаем за качество товара и всегда с<br> радостью поможем Вам с выбором
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="body-recomendation-items">
+            <div class="container">
+                <div class="recomendation-text">
+                    <h2>Мы подобрали для вас</h2>
+                </div>
+                <div class="recomendation-items">
+                    <div class="recomendation-items-1">
+
+                        <div class="recomendation-items-1-text">
+                            <div class="recomendation-items-1-text-1">более 1000<br>лучших рецептов</div>
+                            <div class="recomendation-items-1-text-2">Мы собрали для Вас большую<br> базу рецептов.</div>
+                        </div>
+                        <div class="recomendation-items-1-button">
+                            <button type="button" class="recomendation-button">Перейти</button>
+                        </div>
+
+                    </div>
+                    <div class="recomendation-items-2">
+                        <div class="recomendation-items-1-text">
+                            <div class="recomendation-items-2-text-1">крутые наборы<br>для сыра</div>
+                            <div class="recomendation-items-2-text-2">Готовые наборы сэкономят<br>время, мы всё сделали за Вас.</div>
+                        </div>
+                        <div class="recomendation-items-1-button">
+                            <button type="button" class="recomendation-button">Перейти</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body-equipment-items">
+            <div class="container">
+                <div class="recomendation-text">
+                    <h2>Наше оборудование</h2>
+                </div>
+                <div class="equipment-items">
+                    <div class="recomendation-items-1-text">
+                            <div class="equipment-items-text-1" ><h3>прессы для сыра</h3></div>
+                            <div class="equipment-items-text-2">Пресс можно использовать для прессования твердых<br> сыров. Он разбирается, и вы можете компактно<br>его упаковать в коробку.</div>
+                        </div>
+                        <div class="equipment-items-button">
+                            <button type="button" class="equipment-button equipment-items">Узнать больше</button>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="body-articles">
+            <div class="container">
+                <div class="articles-items">
+                    <div class="articles-items-1">
+                        <div class="articles-items-1-text">
+                            <div class="articles-items-1-text-1" ><h3>статьи<br> про сыроделие</h3></div>
+                            <div class="articles-items-1-text-2">Мы собрали самые интересные и полезные новости о акциях, скидках и мире<br> сыроделия. </div>
+                        </div>
+                        <div class="articles-items-1-button">
+                            <button type="button" class="article-button">Читать все статьи</button>
+                        </div>
+                    </div>
+                    <div class="articles-items-2">
+                        <div class="article-items">
+                            <div class="articles-items-2-photo">
+                                <img class="articles-photo" src="img/body/articles/photo1.svg" alt="article-photo">
+                            </div>
+                            <div class="article-items-2-text">
+                                <div class="article-text-caption">
+                                    сырная тарелка
+                                </div>
+                                <div class="article-text">
+                                    Так называется блюдо, которое состоит <br>из разных сортов сыра. 
+                                </div>
+                                <div class="article-items-link">
+                                    <a href="#">Читать делее  ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles-items-3">
+                        <div class="article-items">
+                            <div class="articles-items-2-photo">
+                                <img class="articles-photo" src="img/body/articles/photo1.svg" alt="articles-photo">
+                            </div>
+                            <div class="article-items-2-text">
+                                <div class="article-text-caption">
+                                    сырная тарелка
+                                </div>
+                                <div class="article-text">
+                                    Так называется блюдо, которое состоит <br>из разных сортов сыра. 
+                                </div>
+                                <div class="article-items-link">
+                                    <a href="#">Читать делее  ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles-items-4">
+                        <div class="article-items">
+                            <div class="articles-items-2-photo">
+                                <img class="articles-photo" src="img/body/articles/photo1.svg" alt="articles-photo">
+                            </div>
+                            <div class="article-items-2-text">
+                                <div class="article-text-caption">
+                                    сырная тарелка
+                                </div>
+                                <div class="article-text">
+                                    Так называется блюдо, которое состоит <br>из разных сортов сыра. 
+                                </div>
+                                <div class="article-items-link">
+                                    <a href="#">Читать делее  ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles-items-5">
+                        <div class="article-items">
+                            <div class="articles-items-2-photo">
+                                <img class="articles-photo" src="img/body/articles/photo1.svg" alt="articles-photo">
+                            </div>
+                            <div class="article-items-2-text">
+                                <div class="article-text-caption">
+                                    сырная тарелка
+                                </div>
+                                <div class="article-text">
+                                    Так называется блюдо, которое состоит <br>из разных сортов сыра. 
+                                </div>
+                                <div class="article-items-link">
+                                    <a href="#">Читать делее  ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="body-viewed">
+            <div class="container">
+                <div class="viewed-items">
+                    <div class="viewed-items-text">
+                        Просмотренные товары
+                    </div>
+                    <div class="viewed-items-card">
+                        <div class="shop-cat-items-1">
+                            <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                            <div class="items-1-ellipse">
+                                <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse-photo">
+                                <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse-photo">
+                            </div>
+                            <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                            <hr>
+                            <div class="items-1-button-price">
+                                <div class="items-1-prise">
+                                    1300₽/1 шт.<br>
+                                    <span class="exway-prise">1800₽</span>
+                                </div>
+                                <div class="items-1-button">
+                                    <button type="button" class="items-1-button">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-cat-items-1">
+                            <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                            <div class="items-1-ellipse">
+                                <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse-photo">
+                                <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse-photo">
+                            </div>
+                            <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                            <hr>
+                            <div class="items-1-button-price">
+                                <div class="items-1-prise">
+                                    1300₽/1 шт.<br>
+                                    <span class="exway-prise">1800₽</span>
+                                </div>
+                                <div class="items-1-button">
+                                    <button type="button" class="items-1-button">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-cat-items-1">
+                            <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                            <div class="items-1-ellipse">
+                                <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse-photo">
+                                <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse-photo">
+                            </div>
+                            <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                            <hr>
+                            <div class="items-1-button-price">
+                                <div class="items-1-prise">
+                                    1300₽/1 шт.<br>
+                                    <span class="exway-prise">1800₽</span>
+                                </div>
+                                <div class="items-1-button">
+                                    <button type="button" class="items-1-button">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-cat-items-1">
+                            <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                            <div class="items-1-ellipse">
+                                <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse-photo">
+                                <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse-photo">
+                            </div>
+                            <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                            <hr>
+                            <div class="items-1-button-price">
+                                <div class="items-1-prise">
+                                    1300₽/1 шт.<br>
+                                    <span class="exway-prise">1800₽</span>
+                                </div>
+                                <div class="items-1-button">
+                                    <button type="button" class="items-1-button">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-cat-items-1">
+                            <img src="img/body/catalog/photo.svg" class="items-1-photo" alt="catalog-photo">
+                            <div class="items-1-ellipse">
+                                <img src="img/body/catalog/Ellipse54.svg" class="items-1-ellipse" alt="ellipse-photo">
+                                <img src="img/body/catalog/Ellipse55.svg" class="items-1-ellipse" alt="ellipse-photo">
+                            </div>
+                            <div class="items-1-text">Мезофильная закваска Danisco CHOOZIT MM...</div>
+                            <hr>
+                            <div class="items-1-button-price">
+                                <div class="items-1-prise">
+                                    1300₽/1 шт.<br>
+                                    <span class="exway-prise">1800₽</span>
+                                </div>
+                                <div class="items-1-button">
+                                    <button type="button" class="items-1-button">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+      </main>
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-items">
+             <div class="footer-items-1 ">
+                <a href="#"><img class="footer-logo" src="img/footer/logo.svg" alt="footer-logo"></a>
+                <div class="footer-items-1-text-1">
+                    Все материалы данного сайта являются объектами авторского права.
+                </div>
+                <div class="footer-items-1-text-2">
+                    Разработка сайта: ЛяЧиз
+                </div>
+             </div>
+             <div class="footer-items-2">
+                <div class="footer-items-2-text">Компания</div>
+                <div class="footer-ul-items">
+                    <a href="#"><div>О компании</div></a>
+                    <a href="#"><div>Акции и скидки</div></a>
+                    <a href="#"><div>Доставка и оплата</div></a>
+                    <a href="#"><div>Отзывы</div></a>
+                    <a href="#"><div>Гарантия и возврат</div></a>
+                </div>
+             </div>
+             <div class="footer-items-3">
+                <div class="footer-items-3-text">Поддержка</div>
+                <div class="footer-ul-items">
+                    <a href="#"><div>Вопрос ответ</div></a>
+                    <a href="#"><div>Бонусная программа</div></a>
+                    <a href="#"><div>Политика конфиденциальности</div></a>
+                    <a href="#"><div>Персональные данных</div></a>
+                </div>
+              </div>
+                <div class="footer-items-4">
+                    <div class="footer-items-3-text">Способы оплаты</div>
+                 <div class="footer-pay-icon">
+                    <a href="#"><img src="img/footer/Ruble.svg" alt="ruble"></a>
+                    <a href="#"><img src="img/footer/Vector.svg" alt="vector"></a>
+                    <a href="#"><img src="img/footer/Sberbank.svg" alt="sberbank"></a>
+                    <a href="#"><img src="img/footer/Yandex.svg" alt="yandex"></a>
+                    <a href="#"><img src="img/footer/Mastercard.svg" alt="mastercard"></a>
+                    <a href="#"><img src="img/footer/Visa.svg" alt="visa"></a>
+                  </div>
+                  </div>
+                  <div class="footer-items-5">
+                    <div class="footer-items-phone">+7 495 120 00 00</div>
+                    <div class="footer-items-text">
+                        <div class="footer-text-5">
+                            <div class="footer-items-5-text">Пн-Пт 9:00 - 19:00</div>
+                            <img src="img/footer/alarm-clock-time-timer.21.svg" class="footer-photo-5" alt="time">
+                        </div>
+                        <div class="footer-text-5">
+                            <div class="footer-items-5-text">г. Москва,  улица Свободы 1/7</div>    
+                            <img src="img/footer/interface-essential-1951.svg"  class="footer-photo-5" alt="gps">
+                        </div>
+                    </div>
+                    <div class="footer-icon-logo-soc">
+                        <a href="#"><img src="img/footer/logo-instagram1.svg" alt="instagram"></a>
+                        <a href="#"><img src="img/footer/logo-vk1.svg" alt="vk"></a>
+                        <a href="#"><img src="img/footer/logo-twitter1.svg" alt="twitter"></a>
+                        <a href="#"><img src="img/footer/logo-facebook1.svg" alt="facebook"></a>
+                        <a href="#"><img src="img/footer/logo-youtube1.svg" alt="youtube">   </a>                     
+                    </div>
+               </div>
+                     </div>
+          </div>
+      </footer>
+
+
+  </body>
+</html>
+
